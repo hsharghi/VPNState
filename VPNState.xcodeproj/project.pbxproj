@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F37A433291FC8B900702877 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F37A432291FC8B900702877 /* Media.xcassets */; };
 		0FCB07F4291FAA880066B5B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB07F3291FAA880066B5B2 /* AppDelegate.swift */; };
 		0FCB07F6291FAA880066B5B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB07F5291FAA880066B5B2 /* ViewController.swift */; };
 		0FCB07F8291FAA890066B5B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB07F7291FAA890066B5B2 /* Assets.xcassets */; };
 		0FCB07FB291FAA890066B5B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB07F9291FAA890066B5B2 /* Main.storyboard */; };
+		0FCB0803291FAA970066B5B2 /* Bash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB0802291FAA970066B5B2 /* Bash.swift */; };
+		0FCB0805291FAAAA0066B5B2 /* VPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB0804291FAAAA0066B5B2 /* VPN.swift */; };
+		0FCB0807291FAD840066B5B2 /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB0806291FAD840066B5B2 /* MenuBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F37A432291FC8B900702877 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		0FCB07F0291FAA880066B5B2 /* VPNState.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPNState.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCB07F3291FAA880066B5B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FCB07F5291FAA880066B5B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0FCB07F7291FAA890066B5B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FCB07FA291FAA890066B5B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0FCB07FC291FAA890066B5B2 /* VPNState.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VPNState.entitlements; sourceTree = "<group>"; };
+		0FCB0802291FAA970066B5B2 /* Bash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bash.swift; sourceTree = "<group>"; };
+		0FCB0804291FAAAA0066B5B2 /* VPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPN.swift; sourceTree = "<group>"; };
+		0FCB0806291FAD840066B5B2 /* MenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +60,13 @@
 		0FCB07F2291FAA880066B5B2 /* VPNState */ = {
 			isa = PBXGroup;
 			children = (
+				0FCB0802291FAA970066B5B2 /* Bash.swift */,
+				0FCB0804291FAAAA0066B5B2 /* VPN.swift */,
+				0FCB0806291FAD840066B5B2 /* MenuBuilder.swift */,
 				0FCB07F3291FAA880066B5B2 /* AppDelegate.swift */,
 				0FCB07F5291FAA880066B5B2 /* ViewController.swift */,
 				0FCB07F7291FAA890066B5B2 /* Assets.xcassets */,
+				0F37A432291FC8B900702877 /* Media.xcassets */,
 				0FCB07F9291FAA890066B5B2 /* Main.storyboard */,
 				0FCB07FC291FAA890066B5B2 /* VPNState.entitlements */,
 			);
@@ -89,7 +101,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					0FCB07EF291FAA880066B5B2 = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -120,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FCB07F8291FAA890066B5B2 /* Assets.xcassets in Resources */,
+				0F37A433291FC8B900702877 /* Media.xcassets in Resources */,
 				0FCB07FB291FAA890066B5B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FCB0805291FAAAA0066B5B2 /* VPN.swift in Sources */,
+				0FCB0807291FAD840066B5B2 /* MenuBuilder.swift in Sources */,
+				0FCB0803291FAA970066B5B2 /* Bash.swift in Sources */,
 				0FCB07F6291FAA880066B5B2 /* ViewController.swift in Sources */,
 				0FCB07F4291FAA880066B5B2 /* AppDelegate.swift in Sources */,
 			);
@@ -183,6 +199,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -200,7 +217,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -243,6 +260,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -254,7 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -269,12 +287,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = VPNState/VPNState.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 923H768GFC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "VPN State";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -296,12 +319,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = VPNState/VPNState.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 923H768GFC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "VPN State";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
