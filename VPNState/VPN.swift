@@ -8,6 +8,7 @@
 import Foundation
 #if(canImport(RegexBuilder))
 import RegexBuilder
+import AppKit
 #endif
 
 enum VPNStatus: String {
@@ -96,7 +97,8 @@ class VPN {
     }
     
     func connect(to vpn: VPNStatus = .asia) throws {
-        guard let ip = try? bash.run("ipconfig", arguments: ["getifaddr", "en1"]) else {
+        let device = (NSApplication.shared.delegate as? AppDelegate)?.device ?? "en0"
+        guard let ip = try? bash.run("ipconfig", arguments: ["getifaddr", device ]) else {
             throw NetworkError(message: "Can't get system IP")
         }
         switch vpn {
