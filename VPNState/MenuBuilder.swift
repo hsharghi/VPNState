@@ -22,10 +22,22 @@ class MenuBuilder {
     
     
     
-      private let connect =
+      private let asia =
           NSMenuItem(
-              title: "Connect",
-              action: #selector(vpnConnect(sender:)),
+              title: "Asia",
+              action: #selector(connectAsia(sender:)),
+              keyEquivalent: "")
+          
+      private let w403 =
+          NSMenuItem(
+              title: "403",
+              action: #selector(connect403(sender: )),
+              keyEquivalent: "")
+          
+      private let shecan =
+          NSMenuItem(
+              title: "Shecan",
+              action: #selector(connectShecan(sender: )),
               keyEquivalent: "")
           
     
@@ -36,10 +48,16 @@ class MenuBuilder {
               keyEquivalent: "")
           
     
-     @objc func vpnConnect(sender: Any) {
-         try? vpn.connect()
-     }
-    
+    @objc func connectAsia(sender: Any) {
+        try? vpn.connect(to: .asia)
+    }
+    @objc func connect403(sender: Any) {
+        try? vpn.connect(to: .w403)
+    }
+    @objc func connectShecan(sender: Any) {
+        try? vpn.connect(to: .shecan)
+    }
+
      @objc func vpnDisconnect(sender: Any) {
          vpn.disconnect()
      }
@@ -58,14 +76,28 @@ class MenuBuilder {
         let status = vpn.getVPNStatus()
         delegate.updateStatusIcon(status: status)
         switch status {
-        case .on:
-            connect.isEnabled = false
+        case .asia:
+            asia.isEnabled = false
+            w403.isEnabled = true
+            shecan.isEnabled = true
+            disconnect.isEnabled = true
+        case .w403:
+            asia.isEnabled = true
+            w403.isEnabled = false
+            shecan.isEnabled = true
+            disconnect.isEnabled = true
+        case .shecan:
+            asia.isEnabled = true
+            w403.isEnabled = true
+            shecan.isEnabled = false
             disconnect.isEnabled = true
         case .off:
-            connect.isEnabled = true
+            asia.isEnabled = true
+            w403.isEnabled = true
+            shecan.isEnabled = true
             disconnect.isEnabled = false
         default:
-            connect.isEnabled = true
+            asia.isEnabled = true
             disconnect.isEnabled = true
         }
 
@@ -75,11 +107,15 @@ class MenuBuilder {
     
     
     func generateMainMenuItems() {
-        connect.target = self
+        asia.target = self
+        shecan.target = self
+        w403.target = self
         disconnect.target = self
         
         mainMenu.addItem(.separator())
-        mainMenu.addItem(connect)
+        mainMenu.addItem(asia)
+        mainMenu.addItem(w403)
+        mainMenu.addItem(shecan)
         mainMenu.addItem(disconnect)
         mainMenu.addItem(.separator())
         mainMenu.addItem(quitMenuItem)
