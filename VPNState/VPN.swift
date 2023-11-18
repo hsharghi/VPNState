@@ -11,8 +11,10 @@ import RegexBuilder
 #endif
 
 enum VPNStatus: String {
-    case on = "ON"
+    case asia = "Asia"
     case off = "OFF"
+    case w403 = "403"
+    case shecan = "Shecan"
     case unknown = "Unknow"
 }
 
@@ -75,7 +77,13 @@ class VPN {
         if let dns = try? bash.run("networksetup", arguments: ["-getdnsservers", "Wi-Fi"]) {
             switch dns {
             case "192.168.80.2":
-                return .on
+                return .asia
+                
+            case "178.22.122.100\n185.51.200.2":
+                return .shecan
+                
+            case "10.202.10.202\n10.202.10.102":
+                return .w403
                 
             case "192.168.80.1":
                 return .off
@@ -87,13 +95,23 @@ class VPN {
         return .unknown
     }
     
-    func connect() throws {
+    func connect(to vpn: VPNStatus = .asia) throws {
         guard let ip = try? bash.run("ipconfig", arguments: ["getifaddr", "en1"]) else {
             throw NetworkError(message: "Can't get system IP")
         }
-        
-        _ = try? bash.run("networksetup", arguments: ["-setmanual", "Wi-Fi", ip, "255.255.255.0", "192.168.80.2"])
-        _ = try? bash.run("networksetup", arguments: ["-setdnsservers", "Wi-Fi", "192.168.80.2"])
+        switch vpn {
+        case .asia:
+            _ = try? bash.run("networksetup", arguments: ["-setmanual", "Wi-Fi", ip, "255.255.255.0", "192.168.80.2"])
+            _ = try? bash.run("networksetup", arguments: ["-setdnsservers", "Wi-Fi", "192.168.80.2"])
+        case .w403:
+            _ = try? bash.run("networksetup", arguments: ["-setmanual", "Wi-Fi", ip, "255.255.255.0", "192.168.80.1"])
+            _ = try? bash.run("networksetup", arguments: ["-setdnsservers", "Wi-Fi", "10.202.10.202", "10.202.10.102"])
+        case .shecan:
+            _ = try? bash.run("networksetup", arguments: ["-setmanual", "Wi-Fi", ip, "255.255.255.0", "192.168.80.1"])
+            _ = try? bash.run("networksetup", arguments: ["-setdnsservers", "Wi-Fi", "178.22.122.100", "185.51.200.2"])
+        default:
+            return
+        }
         
     }
     
