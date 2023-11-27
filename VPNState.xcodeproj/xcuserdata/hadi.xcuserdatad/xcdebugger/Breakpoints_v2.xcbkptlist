@@ -14,8 +14,8 @@
             filePath = "VPNState/VPN.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "getVPNStatus()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "VPNState/VPN.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "getDevice()"
             landmarkType = "7">
          </BreakpointContent>
@@ -65,6 +65,85 @@
             startingLineNumber = "58"
             endingLineNumber = "58"
             landmarkName = "updateStatusIcon(status:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9A5EAF3-F631-42EB-ADA0-692AFF4559CD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VPNState/VPN.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "getDevice()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C9A5EAF3-F631-42EB-ADA0-692AFF4559CD - e322e26623ba5586"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; _StringProcessing.Regex&lt;(Swift.Substring, Swift.Substring)&gt; in VPNState.VPN.getDevice() throws -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "VPNState"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hadi/Downloads/VPNState/VPNState/VPN.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "C9A5EAF3-F631-42EB-ADA0-692AFF4559CD - 35abc6ee2647edbf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VPNState.VPN.getDevice() throws -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "VPNState"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hadi/Downloads/VPNState/VPNState/VPN.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "804">
+               </Location>
+               <Location
+                  uuid = "C9A5EAF3-F631-42EB-ADA0-692AFF4559CD - e322e26623ba55a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; _StringProcessing.Regex&lt;(Swift.Substring, Swift.Substring)&gt; in VPNState.VPN.getDevice() throws -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "VPNState"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hadi/Downloads/VPNState/VPNState/VPN.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06F584FB-A527-41B9-B4EA-CE69C2F0F479"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VPNState/VPN.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "connect(to:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
