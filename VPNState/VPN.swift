@@ -78,7 +78,7 @@ class VPN {
     func getVPNStatus() -> VPNStatus {
         if let dns = try? bash.run("networksetup", arguments: ["-getdnsservers", "Wi-Fi"]) {
             switch dns {
-            case "192.168.80.2":
+            case "1.1.1.1":
                 return .asia
                 
             case "178.22.122.100\n185.51.200.2":
@@ -90,7 +90,7 @@ class VPN {
             case "185.55.226.26\n185.55.225.25":
                 return .gozar
                 
-            case "192.168.80.1":
+            case "There aren't any DNS Servers set on Wi-Fi.":
                 return .off
                 
             default:
