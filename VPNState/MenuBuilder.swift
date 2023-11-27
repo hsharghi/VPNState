@@ -40,6 +40,12 @@ class MenuBuilder {
               action: #selector(connectShecan(sender: )),
               keyEquivalent: "")
           
+      private let gozar =
+          NSMenuItem(
+              title: "Gozar",
+              action: #selector(connectShecan(sender: )),
+              keyEquivalent: "")
+          
     
       private let disconnect =
           NSMenuItem(
@@ -56,6 +62,9 @@ class MenuBuilder {
     }
     @objc func connectShecan(sender: Any) {
         try? vpn.connect(to: .shecan)
+    }
+    @objc func connectGozar(sender: Any) {
+        try? vpn.connect(to: .gozar)
     }
 
      @objc func vpnDisconnect(sender: Any) {
@@ -80,16 +89,25 @@ class MenuBuilder {
             asia.isEnabled = false
             w403.isEnabled = true
             shecan.isEnabled = true
+            gozar.isEnabled = true
             disconnect.isEnabled = true
         case .w403:
             asia.isEnabled = true
             w403.isEnabled = false
             shecan.isEnabled = true
+            gozar.isEnabled = true
             disconnect.isEnabled = true
         case .shecan:
             asia.isEnabled = true
             w403.isEnabled = true
             shecan.isEnabled = false
+            gozar.isEnabled = true
+            disconnect.isEnabled = true
+        case .gozar:
+            asia.isEnabled = true
+            w403.isEnabled = true
+            shecan.isEnabled = true
+            gozar.isEnabled = false
             disconnect.isEnabled = true
         case .off:
             asia.isEnabled = true
@@ -98,6 +116,9 @@ class MenuBuilder {
             disconnect.isEnabled = false
         default:
             asia.isEnabled = true
+            w403.isEnabled = true
+            shecan.isEnabled = true
+            gozar.isEnabled = true
             disconnect.isEnabled = true
         }
 
@@ -110,12 +131,14 @@ class MenuBuilder {
         asia.target = self
         shecan.target = self
         w403.target = self
+        gozar.target = self
         disconnect.target = self
         
         mainMenu.addItem(.separator())
         mainMenu.addItem(asia)
         mainMenu.addItem(w403)
         mainMenu.addItem(shecan)
+        mainMenu.addItem(gozar)
         mainMenu.addItem(disconnect)
         mainMenu.addItem(.separator())
         mainMenu.addItem(quitMenuItem)

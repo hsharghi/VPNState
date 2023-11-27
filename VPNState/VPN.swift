@@ -16,6 +16,7 @@ enum VPNStatus: String {
     case off = "OFF"
     case w403 = "403"
     case shecan = "Shecan"
+    case gozar = "Gozar"
     case unknown = "Unknow"
 }
 
@@ -86,6 +87,9 @@ class VPN {
             case "10.202.10.202\n10.202.10.102":
                 return .w403
                 
+            case "185.55.226.26\n185.55.225.25":
+                return .gozar
+                
             case "192.168.80.1":
                 return .off
                 
@@ -104,13 +108,16 @@ class VPN {
         switch vpn {
         case .asia:
             _ = try? bash.run("networksetup", arguments: ["-setmanual", "Wi-Fi", ip, "255.255.255.0", "192.168.80.2"])
-            _ = try? bash.run("networksetup", arguments: ["-setdnsservers", "Wi-Fi", "192.168.80.2"])
+            _ = try? bash.run("networksetup", arguments: ["-setdnsservers", "Wi-Fi", "1.1.1.1"])
         case .w403:
-            _ = try? bash.run("networksetup", arguments: ["-setmanual", "Wi-Fi", ip, "255.255.255.0", "192.168.80.1"])
+            _ = try? bash.run("networksetup", arguments: ["-setdhcp", "Wi-Fi"])
             _ = try? bash.run("networksetup", arguments: ["-setdnsservers", "Wi-Fi", "10.202.10.202", "10.202.10.102"])
         case .shecan:
-            _ = try? bash.run("networksetup", arguments: ["-setmanual", "Wi-Fi", ip, "255.255.255.0", "192.168.80.1"])
+            _ = try? bash.run("networksetup", arguments: ["-setdhcp", "Wi-Fi"])
             _ = try? bash.run("networksetup", arguments: ["-setdnsservers", "Wi-Fi", "178.22.122.100", "185.51.200.2"])
+        case .gozar:
+            _ = try? bash.run("networksetup", arguments: ["-setdhcp", "Wi-Fi"])
+            _ = try? bash.run("networksetup", arguments: ["-setdnsservers", "Wi-Fi", "185.55.226.26", "185.55.225.25"])
         default:
             return
         }
@@ -119,7 +126,7 @@ class VPN {
     
     func disconnect() {
         _ = try? bash.run("networksetup", arguments: ["-setdhcp", "Wi-Fi"])
-        _ = try? bash.run("networksetup", arguments: ["-setdnsservers", "Wi-Fi", "192.168.80.1"])
+        _ = try? bash.run("networksetup", arguments: ["-setdnsservers", "Wi-Fi", "Empty"])
     }
     
 }
